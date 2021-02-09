@@ -10,10 +10,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest// 별다른 설정 없으면 H2 데이터베이스를 자동으로 ㅅ ㅣㄹ행
+@SpringBootTest// 별다른 설정 없으면 H2 데이터베이스를 자동으로 실행
 public class PostsRepositoryTest {
 
     @Autowired
@@ -47,5 +48,11 @@ public class PostsRepositoryTest {
         Posts posts = postsList.get(0);
         assertThat(posts.getTitle()).isEqualTo(title);
         assertThat(posts.getContent()).isEqualTo(content);
+    }
+
+    @Test
+    public void BaseTimeEntity_등륵(){
+        //given
+        LocalDateTime now = LocalDateTime.of(2019,6,4,0,0,0);
     }
 }
