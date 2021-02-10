@@ -1,6 +1,7 @@
 package com.pooney.book.domain.posts;
 
 
+import com.pooney.book.domain.BaseTimeEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,7 +14,7 @@ import java.util.StringTokenizer;
 @NoArgsConstructor
 //@AllArgsConstructor
 @Entity//테이블과 맅크될 클래시임을 나태난다 ex) TestDb -> test_db
-public class Posts {
+public class Posts extends BaseTimeEntity{
 
 
     //spring boot 2.0 이상부터 IDENTITY 옵션을 추가해야만 auto_increment 된다.
