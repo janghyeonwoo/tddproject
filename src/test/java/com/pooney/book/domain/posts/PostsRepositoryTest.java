@@ -38,12 +38,9 @@ public class PostsRepositoryTest {
                 .content(content)
                 .author("pooney@gmail.com")
                 .build());
-
-
         //when
         //findAll: 모든 데이터를 조회
         List<Posts> postsList = postsRepository.findAll();
-
         //then
         Posts posts = postsList.get(0);
         assertThat(posts.getTitle()).isEqualTo(title);
@@ -54,5 +51,21 @@ public class PostsRepositoryTest {
     public void BaseTimeEntity_등륵(){
         //given
         LocalDateTime now = LocalDateTime.of(2019,6,4,0,0,0);
+        postsRepository.save(Posts.builder()
+                .title("title")
+                .content("content")
+                .author("author")
+                .build());
+
+        //when
+        List<Posts> postsList = postsRepository.findAll();
+        //then
+        Posts posts = postsList.get(0);
+        System.out.println(">>>> createDateTime=" + posts.getCreatedDate() + ", modifiedDate = " + posts.getModifiedDate());
+
+        assertThat(posts.getCreatedDate().isAfter(now));
+        assertThat(posts.getModifiedDate().isAfter(now));
+
+
     }
 }
