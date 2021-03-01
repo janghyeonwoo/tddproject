@@ -8,3 +8,4 @@ out/
 src/main/generated/
 src/main/resources/static/
 src/test/generated_tests/
+application-oauth.properties
