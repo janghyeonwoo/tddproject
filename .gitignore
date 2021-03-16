@@ -3,3 +3,9 @@
 /build/
 /build/classes/java/main/
 /build/classes/java/test/
+.idea/tddproject.iml
+out/
+src/main/generated/
+src/main/resources/static/
+src/test/generated_tests/
+application-oauth.properties
